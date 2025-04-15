@@ -8,20 +8,18 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
-            # - name: Printing Folders
-            #   run: |
-            #     echo "Printing folders"
-            #     tree
+            - name: Printing Folders
+              run: |
+                echo "Printing folders"
+                tree
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
-                node-version: '20'
+                node-version: '20.x'
             - name: Install dependencies
-              run: |
-                cd 04-using-actions/react-app || exit 1
-                npm ci --no-audit
+              run: npm ci
+              working-directory: 04-using-actions/react-app
             - name: Run Unit Tests
-              run: |
-                cd 04-using-actions/react-app || exit 1
-                npm run test
+              run: npm run test
+              working-directory: 04-using-actions/react-app
             
