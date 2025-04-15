@@ -3,7 +3,8 @@ name: 02 - Workflow Events
 on: 
     # push:
     # schedule:
-    #     - cron: "*/1 * * * *"
+    #     - cron: "*/1 * * * *" //github only allows cron jobs to run every 5 minutes or more
+    # pull_request:
     workflow_dispatch:
 
 jobs:
