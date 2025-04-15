@@ -1,6 +1,10 @@
 name: 02 - Workflow Events
 
-on: push
+on: 
+    push:
+    schedule:
+        - cron: "*/1 * * * *"
+    workflow_dispatch:
 
 jobs:
     echo:
